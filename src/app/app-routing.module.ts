@@ -1,11 +1,24 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { RestaurantsComponent } from './components/restaurants/restaurants.component';
+import { PNF404Component } from './components/pnf404/pnf404.component';
 
 const routes: Routes = [
   {
-    path:'', component: HomeComponent, title: 'Home',
+    path: '', redirectTo: 'home', pathMatch: 'full'
+    
+  },
+  {
+    path: 'home',  component: HomeComponent, title: 'FoodHub Home',
+  },
+  {
+    path:'restaurants', component: RestaurantsComponent, title: 'FoodHub Restaurants'
+  },
+  {
+    path: '**', component: PNF404Component, title: '404'
   }
+  
 ];
 
 @NgModule({

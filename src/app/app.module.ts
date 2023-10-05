@@ -7,6 +7,8 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { HomeComponent } from './components/home/home.component';
+import { RestaurantsComponent } from './components/restaurants/restaurants.component';
+import { PNF404Component } from './components/pnf404/pnf404.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { HomeComponent } from './components/home/home.component';
     NavComponent,
     FooterComponent,
     BreadcrumbsComponent,
-    HomeComponent
+    HomeComponent,
+    RestaurantsComponent,
+    PNF404Component
   ],
   imports: [
     BrowserModule,
