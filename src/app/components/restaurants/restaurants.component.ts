@@ -1,19 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {
+  Ripple,
+  initTE,
+} from "tw-elements";
 
 @Component({
   selector: 'app-restaurants',
   templateUrl: './restaurants.component.html',
   styleUrls: ['./restaurants.component.scss']
 })
-export class RestaurantsComponent {
+export class RestaurantsComponent implements OnInit {
+  ngOnInit() {
+    initTE({Ripple})
+  }
 
-  Restaurants = [
+  restaurants = [
   {
-      name: "The Matanda Mangroves",
+    name: "The Matanda Mangroves",
     type: "local",
     region: ["African", "European", "Cameroonian"],
-      profile: "https://kathalog.net/admin/images/dc581b12ce39fd60d5eb9517e890ce7b.jpeg",
-    price: "5000f",
+    profile: "https://kathalog.net/admin/images/dc581b12ce39fd60d5eb9517e890ce7b.jpeg",
+    price: "5000FCFA",
     contact: "6 98 21 12 0",
     facebook: "https://www.facebook.com/lespaletuviersmatanda/",
     email: "paletuviersmatanda@gmail.com",
@@ -40,7 +47,7 @@ export class RestaurantsComponent {
     region: ["African", "European", "French", "Cocktails"],
     type: "local",
     profile: "https://kathalog.net/admin/images/1501195374IMG_6357.JPG",
-    price: "5000f",
+    price: "5000FCFA",
     contact: ["6 94 37 14 60", "6 99 54 70 8"],
     email: "labaleinebluedemassa@gmail.com",
     location:
@@ -70,7 +77,7 @@ export class RestaurantsComponent {
     type: "local",
     region: ["African", "European"],
     profile: "https://kathalog.net/admin/images/784be943fc41f9ae7501c4c8e235cac5.JPG",
-    price: "6000f",
+    price: "6000FCFA",
     contact: "6 51 65 14 81",
     email: "les2perroquets@gmail.com",
     location: "  Rue Ngosso Din, Bali , Douala",
@@ -105,7 +112,7 @@ export class RestaurantsComponent {
     name: "La Pirogue",
     type: "local",
     profile: "https://kathalog.net/admin/images/8998f59b7b8c8e3d439a333ddf7613dd.jpg",
-    price: "3500f",
+    price: "3500FCFA",
     contact: ["6 96 60 27 07", "2 43 59 74 63"],
     facebook: "https://m.facebook.com/Restaurant-la-Pirogue-1628976614001675/ ",
     location: "Carrefour Deido plage, Douala",
@@ -117,7 +124,7 @@ export class RestaurantsComponent {
       "https://kathalog.net/admin/images/3b260c447757d3c367fffe23e78a44f2.jpg",
       "https://kathalog.net/admin/images/c4192a64013e6c88cb6cf8fb174be449.jpg",
       "https://kathalog.net/admin/images/f0b5569a27214249af63e60428bc73bd.jpg",
-      "https://kathalog.net/admin/images/3900f39880693bb8c08b1e7abae6fcc3.jpg",
+      "https://kathalog.net/admin/images/3900FCFA39880693bb8c08b1e7abae6fcc3.jpg",
     ],
     time: ["07h-23h", "07h-00h"],
     days: [
@@ -142,7 +149,7 @@ export class RestaurantsComponent {
     type: "diner",
     region: ["African", "European", "Cocktail"],
     profile: "https://kathalog.net/admin/images/b27970cdf6588d41a60ed7c1117c8b1b.jpeg",
-    price: "4000f",
+    price: "4000FCFA",
     contact: "6 91 28 49 85",
     location: "Base Navale  Bonanjo Douala",
     menu: [
@@ -166,7 +173,7 @@ export class RestaurantsComponent {
     type: "dinner",
     region: ["Lounge", "Bar", "Grillades", "Rooftop"],
     profile: "https://kathalog.net/admin/images/49397cf6f33e96a8478d9a940be37c57.jpeg",
-    price: "5000f",
+    price: "5000FCFA",
     contact: "6 98 26 89 14",
     facebook: "https://facebook.com/clavioakwaofficiel",
     location: "Base Navale Bonanjo Douala",
@@ -188,49 +195,14 @@ export class RestaurantsComponent {
       "Sunday",
     ],
   },
-  {
-    name: "Saga Africa",
-    type: "dinner",
-    region: ["African", "European", "French", "Cocktails"],
-    profile: "/Saga Africa/Profile.jpeg",
-    price: "5000f",
-    contact: "6 51 65 14 81",
-    facebook: "https://m.facebook.com/SagaAfricaAkwa/",
-    email: "sagaafricaresa@gmail.com",
-    location: " Akwa, Douala",
-    menu: [
-      "/Saga Africa/1.jpeg",
-      "/Saga Africa/2.jpeg",
-      "/Saga Africa/3.jpeg",
-      "/Saga Africa/4.jpeg",
-      "/Saga Africa/5.jpeg",
-      "/Saga Africa/6.jpeg",
-      "/Saga Africa/7.jpeg",
-      "/Saga Africa/8.jpeg",
-      "/Saga Africa/9.jpeg",
-      "/Saga Africa/10.jpeg",
-      "/Saga Africa/11.jpeg",
-      "/Saga Africa/12.jpeg",
-      "/Saga Africa/13.jpeg",
-    ],
-    time: "11h-23h",
-    days: [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-    ],
-  },
+  
  
 
   {
     name: "Fun Center",
     region: ["Pizza", "Cocktails"],
     profile: "https://kathalog.net/admin/images/df62ab41879e972e5a879e14d15e1e07.jpeg",
-    price: "5000f",
+    price: "5000FCFA",
     contact: "+ 237 6 56 55 56 55",
     facebook: "www.facebook.com/funcenter237",
     location: "  Bonapriso , Douala",
@@ -251,7 +223,7 @@ export class RestaurantsComponent {
     type: "breakfast",
     region: ["Bar", "Cocktails"],
     profile: "https://kathalog.net/admin/images/1419303242IMG_5757.JPG",
-    price: "5000f",
+    price: "5000FCFA",
     contact: "696734852",
     email: "africa_bio@yahoo.fr",
     location: " Bonapriso , Douala",
@@ -280,7 +252,7 @@ export class RestaurantsComponent {
     type: "breakfast",
     region: ["Cafe", "Bar"],
     profile: "https://kathalog.net/admin/images/2123095486IMG_5794.JPG",
-    price: "8000f",
+    price: "8000FCFA",
     contact: "696 001 832",
     email: "lynkafrique@gmail.com",
     location: "Bonapriso, Douala",
@@ -303,11 +275,11 @@ export class RestaurantsComponent {
     type: "breakfast",
     region: ["Lounge", "Cafe"],
     profile: "https://kathalog.net/admin/images/891085a333fc31d5497884b544a22c98.jpeg",
-    price: "1000f",
+    price: "1000FCFA",
     contact: "6 79 70 10 13",
     facebook: "https://m.facebook.com/Terrificcoffee2018/",
     email: "support@terrificcoffeecm.com",
-    location: " Près d’hôtel Serena, Sable Bonamoussadi",
+    location: " hôtel Serena, Bonamoussadi",
     menu: [
       "https://kathalog.net/admin/images/5cc346d959c40c7cbd45d9bc5e77cee5.jpeg",
       "https://kathalog.net/admin/images/bd2edf614d728a25ccd7ab68eb03c284.jpeg",
@@ -333,14 +305,14 @@ export class RestaurantsComponent {
     type: "dessert",
     region: ["Glace", "Crepes", "Pizza"],
     profile: "https://kathalog.net/admin/images/3e76847321d184133fdc54383e38c08c.jpeg",
-    price: "1500f",
+    price: "1500FCFA",
     contact: "690 03 03 44",
     email: "doualanicecream@gmail.com",
     location: "  Akwa, Douala",
     menu: [
       "https://kathalog.net/admin/images/b77e20204ff2fec98ba1cbed43575b04.jpeg",
-      "https://kathalog.net/admin/images/0fca9b438accb9226be51fc404f9c724.jpeg",
-      "https://kathalog.net/admin/images/832d756b0f265e4a5e0194c2ef6c3e7e.jpeg",
+      "https://kathalog.net/admin/images/0FCFAca9b438accb9226be51fc404f9c724.jpeg",
+      "https://kathalog.net/admin/images/832d756b0FCFA265e4a5e0194c2ef6c3e7e.jpeg",
       "https://kathalog.net/admin/images/750d5e961a9181b8feb8491f905077fb.jpeg",
     ],
     time: "11h-23h",
@@ -359,14 +331,14 @@ export class RestaurantsComponent {
     type: "dessert",
     region: ["Glacier", "Creperie"],
     profile: "https://kathalog.net/admin/images/8ca88d4abaa706363885574284845f43.JPG",
-    price: "2500f",
+    price: "2500FCFA",
     contact: "6 50 00 17 47 ",
     facebook:"https://www.facebook.com/yogoocameroun/",
     location: " Bonapriso, Douala",
     menu: [
       "https://kathalog.net/admin/images/3d342b8d1194c445b29d699d9b326806.jpeg",
       "https://kathalog.net/admin/images/cd7355e6e28b1826b63d97919750d761.jpeg",
-      "https://kathalog.net/admin/images/9dd3319f577ae97d403bb6370f1e6a01.jpeg",
+      "https://kathalog.net/admin/images/9dd3319f577ae97d403bb6370FCFA1e6a01.jpeg",
       "https://kathalog.net/admin/images/16033e21ee5c72227ab452102483d901.jpeg",
      
     ],
@@ -390,7 +362,7 @@ export class RestaurantsComponent {
     type: "dinner",
     region: ["Camerounaise" ,"Africaine"],
     profile: "https://kathalog.net/admin/images/f18057ad85137a458f5468e76c5e2980.jpeg",
-    price: "3000f",
+    price: "3000FCFA",
     contact: ["6 52 65 82 19"],
     location:
       " Kotto, Douala",
@@ -411,5 +383,6 @@ export class RestaurantsComponent {
 
     
 
-];
+  ];
+ 
 }
