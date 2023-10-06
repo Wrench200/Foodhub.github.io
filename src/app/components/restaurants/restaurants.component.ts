@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Restaurant } from 'src/app/interfaces/Restaurant';
 import {
   Ripple,
   initTE,
@@ -11,10 +12,24 @@ import {
 })
 export class RestaurantsComponent implements OnInit {
   ngOnInit() {
-    initTE({Ripple})
+    initTE({ Ripple })
+    this.restaurants.sort(this.sortByName)
+  }
+  
+  sortByName(a:any, b:any ):any {
+    const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+    const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+
+    // sort in an ascending order
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
   }
 
-  restaurants = [
+  restaurants: Restaurant[] = [
   {
     name: "The Matanda Mangroves",
     type: "local",
@@ -31,7 +46,7 @@ export class RestaurantsComponent implements OnInit {
       "https://kathalog.net/admin/images/71fd5b9ccea653126671b2ee509e7802.jpeg",
       "https://kathalog.net/admin/images/71fd5b9ccea653126671b2ee509e7802.jpeg",
     ],
-    time: ["14h-23h", "11h-23h"],
+    time: "14h-23h",
     days: [
       "Monday",
       "Tuesday",
@@ -48,7 +63,7 @@ export class RestaurantsComponent implements OnInit {
     type: "local",
     profile: "https://kathalog.net/admin/images/1501195374IMG_6357.JPG",
     price: "5000FCFA",
-    contact: ["6 94 37 14 60", "6 99 54 70 8"],
+    contact: "6 94 37 14 60",
     email: "labaleinebluedemassa@gmail.com",
     location:
       " Bonanjo, Douala",
@@ -111,9 +126,10 @@ export class RestaurantsComponent implements OnInit {
   {
     name: "La Pirogue",
     type: "local",
+    region: ["African", "European"],
     profile: "https://kathalog.net/admin/images/8998f59b7b8c8e3d439a333ddf7613dd.jpg",
     price: "3500FCFA",
-    contact: ["6 96 60 27 07", "2 43 59 74 63"],
+    contact: "6 96 60 27 07",
     facebook: "https://m.facebook.com/Restaurant-la-Pirogue-1628976614001675/ ",
     location: "Carrefour Deido plage, Douala",
     menu: [
@@ -126,7 +142,7 @@ export class RestaurantsComponent implements OnInit {
       "https://kathalog.net/admin/images/f0b5569a27214249af63e60428bc73bd.jpg",
       "https://kathalog.net/admin/images/3900FCFA39880693bb8c08b1e7abae6fcc3.jpg",
     ],
-    time: ["07h-23h", "07h-00h"],
+    time: "07h-23h",
     days: [
       "Monday",
       "Tuesday",
@@ -135,13 +151,7 @@ export class RestaurantsComponent implements OnInit {
       "Friday",
       "Saturday",
       "Sunday",
-    ],
-    icons: [
-      "Icons/instagram-2-1-logo-svgrepo-com.svg",
-      "Icons/facebook-svgrepo-com.svg",
-      "Icons/twitter-svgrepo-com.svg",
-      "Icons/gmail-svgrepo-com.svg",
-    ],
+    ]
   },
 
   {
@@ -200,6 +210,7 @@ export class RestaurantsComponent implements OnInit {
 
   {
     name: "Fun Center",
+    type: "lunch",
     region: ["Pizza", "Cocktails"],
     profile: "https://kathalog.net/admin/images/df62ab41879e972e5a879e14d15e1e07.jpeg",
     price: "5000FCFA",
@@ -207,7 +218,7 @@ export class RestaurantsComponent implements OnInit {
     facebook: "www.facebook.com/funcenter237",
     location: "  Bonapriso , Douala",
     menu: ["https://kathalog.net/admin/images/1f7cb2660611c891fae4960e12fc578a.jpeg", "https://kathalog.net/admin/images/8946f1ee45bbdfe602ba7f53b0ed2272.jpeg"],
-    time: ["07h-23h", "09h-23h"],
+    time:  "09h-23h",
     days: [
       "Monday",
       "Tuesday",
@@ -287,7 +298,7 @@ export class RestaurantsComponent implements OnInit {
       "https://kathalog.net/admin/images/4bdcecb77518d68e4c7e36b2ca0aca4e.jpeg",
       
     ],
-    time: ["06h-22h", "11h-22h", "06h- 23h", "08h-23h"],
+    time:  "08h-23h",
     days: [
       "Monday",
       "Tuesday",
@@ -363,7 +374,7 @@ export class RestaurantsComponent implements OnInit {
     region: ["Camerounaise" ,"Africaine"],
     profile: "https://kathalog.net/admin/images/f18057ad85137a458f5468e76c5e2980.jpeg",
     price: "3000FCFA",
-    contact: ["6 52 65 82 19"],
+    contact: "6 52 65 82 19",
     location:
       " Kotto, Douala",
     menu: [
@@ -371,14 +382,9 @@ export class RestaurantsComponent implements OnInit {
     ],
     facebook: "https://m.facebook.com/legout040/",
     email:"legout040@gmail.com",
-    time: ["12h - 22h"],
-    days: [, "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    icons: [
-      "Icons/instagram-2-1-logo-svgrepo-com.svg",
-      "Icons/facebook-svgrepo-com.svg",
-      "Icons/twitter-svgrepo-com.svg",
-      "Icons/gmail-svgrepo-com.svg",
-    ],
+    time: "12h - 22h",
+    days: [ "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    
   },
 
     
