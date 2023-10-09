@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { initFlowbite } from 'flowbite';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -9,6 +9,8 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { HomeComponent } from './components/home/home.component';
 import { RestaurantsComponent } from './components/restaurants/restaurants.component';
 import { PNF404Component } from './components/pnf404/pnf404.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,10 @@ import { PNF404Component } from './components/pnf404/pnf404.component';
     BreadcrumbsComponent,
     HomeComponent,
     RestaurantsComponent,
-    PNF404Component
+    PNF404Component,
+    RegisterComponent,
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,

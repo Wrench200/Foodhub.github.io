@@ -12,7 +12,7 @@ module.exports = {
   darkMode: "class",
   plugins: [
     require("flowbite/plugin"),
-    require("tw-elements/dist/plugin.cjs")
+   
   ],
 };
 

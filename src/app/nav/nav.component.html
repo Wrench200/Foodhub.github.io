@@ -1,22 +1,27 @@
-<nav class="bg-white md:bg-transparent z px-4 fixed top-0 w-full z-50 border-gray-200 dark:bg-gray-900">
-    <div class=" flex flex-wrap items-center justify-between  p-4">
+<nav (scroll)="scroll()"
+  [ngClass]="scroll() ? 'bg-black' : 'bg-transparent'" class=" transition-all duration-1000  z px-4 py-2 fixed top-0 w-full z-50 border-gray-200 dark:bg-gray-900">
+    <div class=" flex flex-wrap items-center justify-between  p-2">
         <a href="https://flowbite.com/" class="flex items-center">
             <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="L" />
-            <span class="self-center text-2xl font-semibold cursor-pointer whitespace-nowrap md:text-white">FoodHub</span>
+            <span class="self-center text-2xl font-semibold cursor-pointer whitespace-nowrap text-white">FoodHub</span>
         </a>
         <div class="flex items-center md:order-2">
-            <button type="button"
+            <button *ngIf=" checkforlogin()" type="button"
                 class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 hover:ring-4 hover:ring-gray-300 dark:focus:ring-gray-600"
                 id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
                 data-dropdown-placement="bottom">
                 <span class="sr-only">Open user menu</span>
                 <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="user photo">
             </button>
+            <a routerLink="/register" *ngIf=" !checkforlogin()" type="button"
+                class="inline-block rounded-full bg-success px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#14a44d] transition duration-150 ease-in-out hover:bg-success-600 hover:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] focus:bg-success-600 focus:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] focus:outline-none focus:ring-0 active:bg-success-700 active:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(20,164,77,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)]">
+                Login
+        </a>
             <!-- Dropdown menu -->
-            <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+            <div *ngIf=" checkforlogin()" class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
                 id="user-dropdown">
                 <div class="px-4 py-3">
-                    <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+                    <span  class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
                     <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
                 </div>
                 <ul class="py-2" aria-labelledby="user-menu-button">
@@ -50,9 +55,9 @@
                 </svg>
             </button>
         </div>
-        <div class="items-center justify-between mt-4 bg-white md:bg-transparent hidden  w-full md:flex md:w-auto md:order-1" id="navbar-user">
+        <div class="items-center justify-between mt-2 bg-white rounded-xl md:bg-transparent hidden  w-full md:flex md:w-auto md:order-1" id="navbar-user">
             <ul
-                class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                class="flex flex-col font-medium p-4 justify-center md:p-0  border border-gray-100 rounded-xl  md:flex-row md:space-x-8 md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
                     <a routerLink="home" routerLinkActive="activelink"
                         class="navlinks" 
@@ -63,7 +68,7 @@
                         class="navlinks">Restaurants</a>
                 </li>
                 <li>
-                    <a routerLink="1" routerLinkActive="activelink"
+                    <a  routerLinkActive="activelink"
                         class="navlinks">Services</a>
                 </li>
                 <li>
