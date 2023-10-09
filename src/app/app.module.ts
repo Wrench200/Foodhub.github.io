@@ -11,6 +11,8 @@ import { RestaurantsComponent } from './components/restaurants/restaurants.compo
 import { PNF404Component } from './components/pnf404/pnf404.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -23,11 +25,15 @@ import { LoginComponent } from './components/login/login.component';
     PNF404Component,
     RegisterComponent,
     LoginComponent,
+
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
