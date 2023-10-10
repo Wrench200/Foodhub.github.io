@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { initFlowbite } from 'flowbite';
 import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
@@ -49,10 +50,10 @@ console.log('submited');
 console.log('good');
 
       localStorage.setItem('auth', JSON.stringify(save.data))
-      this.router.navigate(['/home'], {
-
-        queryParams: { id: save.data?.id }
-      })
+      this.router.navigate(['/home']).then(() => {
+        window.location.reload()
+       });
+      
     } else {
 console.log('badd');
 
@@ -60,5 +61,8 @@ console.log('badd');
     }
   }
 
-  
+  redirectTo(uri: string) {
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+      this.router.navigate([uri]));
+  }
 }

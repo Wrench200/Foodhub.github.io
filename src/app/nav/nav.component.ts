@@ -1,5 +1,8 @@
+import { ActivatedRoute, Router, ActivatedRouteSnapshot } from '@angular/router';
 import { LocalstorageService } from './../Services/localstorage.service';
-import { Component, HostListener } from "@angular/core";
+import { Component, HostListener, OnInit } from "@angular/core";
+import { initFlowbite } from 'flowbite';
+
 
 
 
@@ -7,16 +10,25 @@ import { Component, HostListener } from "@angular/core";
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss'],
-  
+
 })
-export class NavComponent {
-  constructor( private Localstorage: LocalstorageService){}
+export class NavComponent implements OnInit {
+  showNavbar: Boolean
+  constructor(private Localstorage: LocalstorageService, private router: Router, private activeroute: ActivatedRoute) {
+    this.showNavbar = this.activeroute.snapshot.url.toString().includes('home') || this.activeroute.snapshot.url.toString().includes('restaurants') 
+    
+    
+   }
+  ngOnInit(): void {
+    initFlowbite
+    
+  }
   
   loggedin: any = this.Localstorage.getitem('auth')
   @HostListener('window:scroll', ['$event'])
   scroll() {
     let a = window.scrollY;
-    let b = 50;
+    let b = 30;
     if (a >= b) {
       return true
 
@@ -37,6 +49,7 @@ export class NavComponent {
 
   logout() {
     this.Localstorage.removeitem('auth');
+    this.router.navigate(['/login']);
   }
 
 }

@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { initFlowbite } from 'flowbite';
 import { Restaurant } from 'src/app/interfaces/Restaurant';
-import {
-  Ripple,
-  initTE,
-} from "tw-elements";
+
 
 @Component({
   selector: 'app-restaurants',
@@ -12,7 +10,7 @@ import {
 })
 export class RestaurantsComponent implements OnInit {
   ngOnInit() {
-    initTE({ Ripple })
+  initFlowbite
     this.restaurants.sort(this.sortByName)
   }
   

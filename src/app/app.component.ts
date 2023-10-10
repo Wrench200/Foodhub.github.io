@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { initFlowbite } from 'flowbite';
-import { Input, Ripple, initTE } from 'tw-elements';
+
 
 
 @Component({
@@ -11,7 +11,7 @@ import { Input, Ripple, initTE } from 'tw-elements';
 export class AppComponent implements OnInit{
 
   ngOnInit(): void {
-    initFlowbite();
-    initTE({Input, Ripple});
+    initFlowbite
+   
   }
 }

@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  Input,
-  Ripple,
-  initTE,
-} from "tw-elements";
+import { initFlowbite } from 'flowbite';
+
 
 
 
@@ -13,12 +10,9 @@ import {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  ngOnInit(){
-    initTE({ Input, Ripple });
+  ngOnInit() {
+   initFlowbite
+    
     
   }
- 
-   
-    
-    
 }

@@ -1,4 +1,4 @@
-<nav (scroll)="scroll()"
+<nav  (scroll)="scroll()"
   [ngClass]="scroll() ? 'bg-black' : 'bg-transparent'" class=" transition-all duration-1000  z px-4 py-2 fixed top-0 w-full z-50 border-gray-200 dark:bg-gray-900">
     <div class=" flex flex-wrap items-center justify-between  p-2">
         <a routerLink="/home" class="flex items-center">
@@ -24,7 +24,7 @@
                 id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
                 data-dropdown-placement="bottom">
                 <span class="sr-only">Open user menu</span>
-                <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="user photo">
+                <img class="w-8 h-8 rounded-full" src="" alt="user photo">
             </button>
             <a routerLink="/login" *ngIf=" !checkforlogin()" type="button"
                 class=" font-semibold text-white text-xl hover:text-rose-600 hover:underline mr-3">
@@ -35,9 +35,9 @@
                 id="user-dropdown">
                 <div class="px-4 py-3">
                     <span  class="block text-sm text-gray-900 dark:text-white">{{loggedin.username}}</span>
-                    <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">l{{loggedin.email}}</span>
+                    <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">{{loggedin.email}}</span>
                 </div>
-                <ul class="py-2" aria-labelledby="user-menu-button">
+                <ul  aria-labelledby="user-menu-button">
                     <li>
                         <a 
                             class="block px-4 py-2 text-sm text-gray-700 hover:bg-rose-600 hover:text-white cursor-pointer dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
@@ -49,7 +49,7 @@
                     
                     <li>
                         <a (click)="logout()"
-                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-rose-600 hover:text-white cursor-pointer dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Log
+                            class="block px-4 py-2 rounded-b-lg text-sm text-gray-700 hover:bg-rose-600 hover:text-white cursor-pointer dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Log
                             out</a>
                     </li>
                 </ul>
