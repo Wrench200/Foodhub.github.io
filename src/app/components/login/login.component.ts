@@ -1,23 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/Services/auth.service';
+import { NavbarService } from 'src/app/Services/navbar.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   loginForm: FormGroup = new FormGroup({});
   loginError: string = '';
   error_message: string | null = null
-
+  OnInit() {
+  
+}
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public nav: NavbarService
   ) {
     this.route.queryParams.subscribe((query: any) => {
       if (query.message) {
@@ -27,6 +31,9 @@ export class LoginComponent {
   }
 
   ngOnInit(): void {
+    
+    
+    this.nav.hide()
     this.loginForm = this.formBuilder.group({
       email: ['', [
         Validators.required,
@@ -57,9 +64,10 @@ export class LoginComponent {
     } else {
       console.log(login.data);
       localStorage.setItem('auth', JSON.stringify(login.data))
-      this.router.navigate(['/home']).then(() => {
-        window.location.reload()
-      });
+      this.redirectTo('home')
     }
+  }
+  redirectTo(uri: string) {
+    this.router.navigate(['breadcrumbs'], { queryParams: { uri: uri } })
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { initFlowbite } from 'flowbite';
+import { NavbarService } from 'src/app/Services/navbar.service';
 import { Restaurant } from 'src/app/interfaces/Restaurant';
 
 
@@ -10,10 +11,13 @@ import { Restaurant } from 'src/app/interfaces/Restaurant';
 })
 export class RestaurantsComponent implements OnInit {
   ngOnInit() {
+    this.nav.show()
   initFlowbite
     this.restaurants.sort(this.sortByName)
   }
-  
+  constructor(public nav: NavbarService) {
+    
+  }
   sortByName(a:any, b:any ):any {
     const nameA = a.name.toUpperCase(); // ignore upper and lowercase
     const nameB = b.name.toUpperCase(); // ignore upper and lowercase

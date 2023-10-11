@@ -1,5 +1,5 @@
 
-<div class=" scroll-smooth bg-gradient-to-b from-neutral-700 to-95% to-gray-50 flex flex-col justify-center  items-center">
+<div class=" scroll-smooth bg-gradient-to-b from-stone-700 to-95% to-gray-50 flex flex-col justify-center  items-center">
 
     <h1 data-te-ripple-init data-te-ripple-color="light" class="text-4xl pt-20 font-semibold text-white bg-no-repeat bg-cover text-center w-full none mb-8">All Restaurants
 
@@ -8,30 +8,30 @@
     </h1>
     <div class="container  flex flex-wrap justify-center items-center ">
         <div *ngFor="let rest of restaurants"
-            class="w-[19rem] m-4  h-[20rem]  max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <a >
-                <img  class="p-4 h-[13rem] w-[19rem]  rounded-xl" src="{{ rest.profile }}" alt="product image" />
+            class="w-[19rem] m-4   odd:text-rose-500 even:text-amber-600 h-[19rem]  max-w-sm bg-neutral-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a>
+                <img  class="p-4 h-[13rem] w-[19rem]  rounded-xl" src="{{ rest.profile }}" alt=" image" />
             </a>
             <div class="flex justify-between w-full">
                 <div class="px-3 w-4/5">
                     <a>
-                        <h4 class="text-xl font-semibold tracking-tight text-rose-500 dark:text-white">{{rest.name}}
+                        <h4 class="text-xl font-semibold tracking-tight  dark:text-white">{{rest.name}}
                         </h4>
-                        <h5 class="font-normal">
+                        <h5 class="font-normal text-gray-700">
                             {{rest.location}}
                         </h5>
-                        <h6 class="font-medium">
+                        <h6 class="font-semibold text-black">
                             {{rest.price}}
                         </h6>
                     </a>
                 </div>
                 <div class="flex items-center px-3 justify-center">
 
-                    <a  class="cursor-pointer"><svg class="w-8 h-8 text-gray-800 dark:text-white" aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                            <path
-                                d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                        </svg></a>
+                    <a  class="cursor-pointer "><svg class="w-6 h-6 text-red-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 21 19">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
+                    </svg></a>
                 </div>
             </div>
         </div>

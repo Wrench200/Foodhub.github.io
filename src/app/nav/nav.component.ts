@@ -2,6 +2,8 @@ import { ActivatedRoute, Router, ActivatedRouteSnapshot } from '@angular/router'
 import { LocalstorageService } from './../Services/localstorage.service';
 import { Component, HostListener, OnInit } from "@angular/core";
 import { initFlowbite } from 'flowbite';
+import { NavbarService } from '../Services/navbar.service';
+import { InitialsPipe } from '../Pipes/initials.pipe';
 
 
 
@@ -13,14 +15,15 @@ import { initFlowbite } from 'flowbite';
 
 })
 export class NavComponent implements OnInit {
-  showNavbar: Boolean
-  constructor(private Localstorage: LocalstorageService, private router: Router, private activeroute: ActivatedRoute) {
-    this.showNavbar = this.activeroute.snapshot.url.toString().includes('home') || this.activeroute.snapshot.url.toString().includes('restaurants') 
-    
+  
+  constructor(private Localstorage: LocalstorageService, private router: Router, public nav: NavbarService) {
+   
     
    }
   ngOnInit(): void {
-    initFlowbite
+    initFlowbite()
+   
+    
     
   }
   
@@ -49,7 +52,9 @@ export class NavComponent implements OnInit {
 
   logout() {
     this.Localstorage.removeitem('auth');
-    this.router.navigate(['/login']);
+    this.redirectTo('login')
   }
-
+  redirectTo(uri: string) {
+    this.router.navigate(['breadcrumbs'], { queryParams: { uri: uri } })
+  }
 }

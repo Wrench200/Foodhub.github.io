@@ -1,15 +1,15 @@
-<section class="gradient-form h-screen bg-neutral-200 dark:bg-neutral-700">
-    <div class="container h-screen ">
-        <div class=" flex h-screen flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
-            <div class="w-[30rem] ">
-                <div class="block rounded-lg bg-white shadow-lg dark:bg-neutral-800">
-                    <div class="lg:flex lg:flex-wrap">
+<section class="gradient-form h-full bg-neutral-200 dark:bg-neutral-700">
+    <div class=" sm:mx-2 h-full ">
+        <div class=" flex  h-screen w-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
+           
+                <div class="block w-[17rem] sm:w-[25rem] rounded-lg bg-white shadow-lg dark:bg-neutral-800">
+                   
                         <!-- Left column container-->
                         <div class="px-4 md:px-0 lg:w-full">
-                            <div class="md:mx-6 md:pr-8">
+                            <div class="md:mx-6 px-2">
                                 <!--Logo-->
                                 <div class="flex justify-center items-center ">
-                                    <a routerLink="/home" class="flex w-full justify-center items-center">
+                                    <a (click)="redirectTo('home')" class="flex w-full justify-center items-center">
                                         <svg class="h-18 w-18" fill="#f93e3e" version="1.1" id="Capa_1"
                                             xmlns="http://www.w3.org/2000/svg"
                                             xmlns:xlink="http://www.w3.org/1999/xlink" width="156px" height="156px"
@@ -28,12 +28,12 @@
                                             </g>
                                         </svg>
                                         <span
-                                            class="self-center text-4xl font-semibold cursor-pointer whitespace-nowrap text-red-600">FoodHub</span>
+                                            class="self-center text-4xl font-semibold cursor-pointer whitespace-nowrap text-black">FoodHub</span>
                                     </a>
 
                                 </div>
                                 <p class="my-4 font-semibold text-2xl ">Login</p>
-                                <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
 
                                     <div class="relative z-0 w-full mb-6 group">
@@ -50,10 +50,10 @@
                                     <div class="relative z-0 w-full mb-6 group">
                                         <input type="password" name="password" id="password"
                                             class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                            placeholder=" " formControlName="password" required/>
+                                            placeholder=" " formControlName="password" required />
                                         <label for="password"
                                             class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
-                                        <p  class="mt-2 text-sm h-6 text-red-600 dark:text-red-500"><span
+                                        <p class="mt-2 text-sm h-6 text-red-600 dark:text-red-500"><span
                                                 class="font-medium">{{ loginError }} </span>
                                         </p>
                                     </div>
@@ -62,8 +62,8 @@
                                     <div class="mb-12 pb-1 pt-1 flex flex-col ">
                                         <input
                                             class="mb-3 inline-block w-[10rem] rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] bg-rose-500 hover:bg-rose-600"
-                                            type="submit" value="Login"/>
-                                           
+                                            type="submit" value="Login" />
+
 
                                         <!--Forgot password link-->
                                         <a class=" text-blue-700 hover:text-blue-600 font-mediumcursor-pointer">
@@ -88,6 +88,5 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+       
 </section>

@@ -1,15 +1,15 @@
-<section class="gradient-form h-screen bg-neutral-200 dark:bg-neutral-700">
-    <div class="container h-screen ">
-        <div class=" flex h-screen flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
-            <div class="w-[30rem] ">
-                <div class="block rounded-lg bg-white shadow-lg dark:bg-neutral-800">
-                    <div class="lg:flex lg:flex-wrap">
+<section class="gradient-form h-full  bg-neutral-200 dark:bg-neutral-700">
+    <div class="sm:mx-2 h-full ">
+        <div class=" flex  h-screen w-full flex-wrap items-center justify-center text-neutral-800 dark:text-neutral-200">
+            <div>
+                <div class="block  w-[17rem] sm:w-[25rem]  rounded-lg bg-white shadow-lg dark:bg-neutral-800">
+                    
                         <!-- Left column container-->
                         <div class="px-4 md:px-0 lg:w-full">
-                            <div class="md:mx-6 md:pr-8">
+                            <div class="md:mx-6 px-2 ">
                                 <!--Logo-->
                                 <div class="flex justify-center items-center ">
-                                    <a routerLink="/home" class="flex w-full justify-center items-center">
+                                    <a (click)="redirectTo('home')" class="flex w-full justify-center items-center">
                                         <svg class="h-18 w-18" fill="#f93e3e" version="1.1" id="Capa_1"
                                             xmlns="http://www.w3.org/2000/svg"
                                             xmlns:xlink="http://www.w3.org/1999/xlink" width="156px" height="156px"
@@ -32,61 +32,104 @@
                                     </a>
 
                                 </div>
+                               
                                 <p class="my-4 font-semibold text-2xl ">Create Account</p>
                                 <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form" novalidate>
 
-                                    <div class="relative z-0 w-full mb-6 group">
+                                    <div class="relative z-0 w-full mb-3 group">
                                         <input type="username" name="username" id="username"
                                             class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                                            placeholder=" "  formControlName="username" required />
+                                            placeholder=" " formControlName="username" required />
                                         <label for="username"
                                             class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Username
                                         </label>
-                                        <div class="red" *ngIf="signupForm.controls['username'].dirty">
-                                            <p *ngIf="signupForm.controls['username'].invalid" class="mt-2 text-sm text-red-600 dark:text-red-500"><span
-                                                    class="font-medium">Oops!</span> Username already
-                                                taken!
+                                        <div class=" h-8">
+                                            <p *ngIf="signupForm.controls['username'].dirty && signupForm.controls['username'].errors?.['minlength']"
+                                                class=" text-sm text-red-600 dark:text-red-500"><span
+                                                    class="font-medium"></span> username is too short
                                             </p>
-
+                                            <p *ngIf="signupForm.controls['username'].dirty && signupForm.controls['username'].errors?.['maxlength']"
+                                                class=" text-sm text-red-600 dark:text-red-500">
+                                                <span class="font-medium"></span> username is too long
+                                            </p>
+                                            <p *ngIf="signupForm.controls['username'].touched && signupForm.controls['username'].errors?.['required']"
+                                                class=" text-sm text-red-600 dark:text-red-500">
+                                                <span class="font-medium"></span> username is required
+                                            </p>
+                                            <p *ngIf="signupForm.controls['username'].dirty && signupForm.controls['username'].errors?.['pattern']"
+                                                class=" text-sm text-red-600 dark:text-red-500">
+                                                <span class="font-medium"></span> username can not contain numbers
+                                            </p>
+                                            <p *ngIf="signupForm.controls['username'].valid" class="text-green-800 font-semibold">
+                                                All good
+                                            </p>
                                         </div>
                                     </div>
-                                    <div class="relative z-0 w-full mb-6 group">
+                                    <div class="relative z-0 w-full mb-3 group">
                                         <input type="email" name="email" id="email"
                                             class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                             placeholder=" " formControlName="email" required />
                                         <label for="email"
                                             class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email
                                             address</label>
-                                            <div class="red" *ngIf="signupForm.controls['email'].dirty">
+                                        <div class="red h-8">
 
-                                                <p *ngIf="signupForm.controls['email'].invalid" class="mt-2 text-sm text-red-600 dark:text-red-500"><span
-                                                        class="font-medium">Oops!</span> Username already taken!
-                                                </p>
-                                            </div>
+                                            <p *ngIf="signupForm.controls['email'].dirty && signupForm.controls['email'].errors?.['pattern']"
+                                                class=" text-sm text-red-600 dark:text-red-500"><span
+                                                    class="font-medium"></span>
+                                                Please enter a valid email address
+                                            </p>
+                                            <p *ngIf="signupForm.controls['email'].touched && signupForm.controls['email'].errors?.['required']"
+                                                class=" text-sm text-red-600 dark:text-red-500"><span
+                                                    class="font-medium"></span>
+                                                Email is required
+                                            </p>
+                                            <p *ngIf="signupForm.controls['email'].valid" class="text-green-800 font-semibold">
+                                                All good
+                                            </p>
+                                        </div>
                                     </div>
 
                                     <!--Password input-->
-                                    <div class="relative z-0 w-full mb-6 group">
+                                    <div class="relative z-0 w-full mb-3 group">
                                         <input type="password" name="password" id="password"
                                             class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                             placeholder=" " formControlName="password" />
                                         <label for="password"
                                             class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
-                                            <div class="mt-2 text-sm text-red-600 dark:text-red-500" *ngIf="signupForm.controls['password'].dirty">
-                                            <p *ngIf="signupForm.controls['password'].invalid" class="mt-2 text-sm text-red-600 dark:text-red-500"><span
-                                                    class="font-medium">Oops!</span> Username already taken!
-                                            </p>
+                                        <div class="" >
+                                            <p *ngIf="signupForm.controls['password'].dirty && signupForm.controls['password'].errors?.['pattern']"
+                                                class=" text-sm text-red-600 dark:text-red-500"><span
+                                                    class="font-medium">
+                                                <span class="grid gap-0 text-red-700 font-medium">
+                                                    <span>Password should have at least one number</span>
+                                                    <span>Password should have at least one letter</span>
+                                                    <span>Password minimium length is 8</span>
+                                                    <span>Password maximium length is 10</span>
+                                                </span></span>
+                                               
 
+                                            </p>
+                                            <p *ngIf="signupForm.controls['password'].touched && signupForm.controls['password'].errors?.['required']"
+                                                class=" text-sm text-red-600 dark:text-red-500">
+                                                <span class="grid gap-0 text-red-700 font-medium">
+                                                 Password is required
+                                                </span>
+                                               
+
+                                            </p>
+                                            <p *ngIf="signupForm.controls['password'].valid"  class="text-green-800 font-semibold">
+                                                All good
+                                            </p>
                                         </div>
+
                                     </div>
 
                                     <!--Submit button-->
                                     <div class="mb-12 pb-1 pt-1 flex flex-col ">
                                         <input type="submit"
                                             class="mb-3 inline-block w-[10rem] rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] bg-rose-500 hover:bg-rose-600"
-                                            
-                                            value="Create Account"
-                                        />
+                                            value="Create Account" />
 
 
                                     </div>
@@ -103,9 +146,9 @@
                             </div>
                         </div>
 
-                        <!-- Right column container with background and description-->
+                     
 
-                    </div>
+                   
                 </div>
             </div>
         </div>

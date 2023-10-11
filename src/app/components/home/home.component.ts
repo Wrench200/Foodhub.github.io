@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { initFlowbite } from 'flowbite';
+import { NavbarService } from 'src/app/Services/navbar.service';
 
 
 
@@ -11,8 +12,12 @@ import { initFlowbite } from 'flowbite';
 })
 export class HomeComponent implements OnInit {
   ngOnInit() {
-   initFlowbite
+    
+    initFlowbite
+    this.nav.show()
+    this.nav.doSomethingElseUseful()
     
     
   }
+  constructor( public nav: NavbarService) { }
 }

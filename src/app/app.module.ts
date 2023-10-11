@@ -13,6 +13,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { NavbarService } from './Services/navbar.service';
+import { InitialsPipe } from './Pipes/initials.pipe';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,8 @@ import { RouterModule } from '@angular/router';
     PNF404Component,
     RegisterComponent,
     LoginComponent,
+    InitialsPipe,
+    LoaderComponent,
 
     
   ],
@@ -34,9 +39,10 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+   
     
   ],
-  providers: [],
+  providers: [NavbarService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,6 +5,7 @@ import { RestaurantsComponent } from './components/restaurants/restaurants.compo
 import { PNF404Component } from './components/pnf404/pnf404.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,9 @@ const routes: Routes = [
   },
   {
 path: 'login', component: LoginComponent, title: 'Login'
+  },
+  {
+    path: 'breadcrumbs', component: BreadcrumbsComponent, title: 'bread'
   },
   {
     path: '**', component: PNF404Component, title: '404'

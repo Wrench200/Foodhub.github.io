@@ -1,4 +1,4 @@
-<nav  (scroll)="scroll()"
+<nav *ngIf="nav.visible" (scroll)="scroll()"
   [ngClass]="scroll() ? 'bg-black' : 'bg-transparent'" class=" transition-all duration-1000  z px-4 py-1 fixed top-0 w-full z-50 border-gray-200 dark:bg-gray-900">
     <div class=" flex flex-wrap items-center justify-between  p-2">
         <a routerLink="/home" class="flex items-center">
@@ -20,14 +20,14 @@
         </a>
         <div class="flex items-center md:order-2">
             <button *ngIf=" checkforlogin()" type="button"
-                class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 hover:ring-4 hover:ring-gray-300 dark:focus:ring-gray-600"
+                class="flex mr-3 text-xl p-1 bg-amber-600 rounded-full md:mr-0 hover:ring-4 hover:ring-gray-300 dark:focus:ring-gray-600"
                 id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
                 data-dropdown-placement="bottom">
                 <span class="sr-only">Open user menu</span>
-                <img class="w-8 h-8 rounded-full" src="" alt="user photo">
+               <p class="h-8 rounded-full font-semibold text-white w-8" >{{ loggedin.username | initials | uppercase }}</p>
             </button>
-            <a routerLink="/login" *ngIf=" !checkforlogin()" type="button"
-                class=" font-semibold text-white text-xl hover:text-rose-600 hover:underline mr-3">
+            <a (click)="redirectTo('login')" *ngIf=" !checkforlogin()" type="button"
+                class=" font-semibold cursor-pointer text-white text-xl hover:text-rose-600 hover:underline mr-3">
                 LogIn
         </a>
             <!-- Dropdown menu -->
@@ -69,12 +69,12 @@
             <ul
                 class="flex flex-col font-medium p-4 justify-center md:p-0  border border-gray-100 rounded-xl  md:flex-row md:space-x-8 md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
-                    <a routerLink="/home" routerLinkActive="activelink"
+                    <a routerLink="/home" routerLinkActive="activelink" 
                         class="navlinks" 
                        >Home</a>
                 </li>
                 <li>
-                    <a routerLink="/restaurants" routerLinkActive="activelink"
+                    <a routerLink="/restaurants" routerLinkActive="activelink" 
                         class="navlinks">Restaurants</a>
                 </li>
                 <li>
