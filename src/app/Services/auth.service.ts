@@ -63,7 +63,7 @@ export class AuthService {
 
     let users: Array<user> = this.localstorage.getitem('users') ?? [];
     user['password'] = this.passencrypt(user.password)
-    user['id'] = Date.now();
+    user['id'] = Date.now(); 
     user['created_at'] = this.getCurrentDate();
     delete user.confirm_password;
     users.push(user);
@@ -86,7 +86,7 @@ export class AuthService {
       for (let i = 0; i < users.length; i++) {
 
         const user = users[i];
-        console.log(user.password);
+       
 
 
         if (user.email == email && this.passdecrypt(user.password) == password) {

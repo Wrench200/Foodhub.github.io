@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup = new FormGroup({});
   loginError: string = '';
   error_message: string | null = null
+  url!: string 
   OnInit() {
   
 }
@@ -31,7 +32,11 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+    this.route.queryParams.subscribe(params => {
+      this.url = params['uri']
+
+
+    })
     
     this.nav.hide()
     this.loginForm = this.formBuilder.group({

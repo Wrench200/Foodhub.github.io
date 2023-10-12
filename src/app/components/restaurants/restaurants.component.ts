@@ -1,5 +1,8 @@
+import { FavouritesService } from './../../Services/favourites.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { initFlowbite } from 'flowbite';
+import { LocalstorageService } from 'src/app/Services/localstorage.service';
 import { NavbarService } from 'src/app/Services/navbar.service';
 import { Restaurant } from 'src/app/interfaces/Restaurant';
 
@@ -10,12 +13,19 @@ import { Restaurant } from 'src/app/interfaces/Restaurant';
   styleUrls: ['./restaurants.component.scss']
 })
 export class RestaurantsComponent implements OnInit {
+
+  showPopup: boolean = false;
+  
+  
+  addtofav(restaurant: any) {
+   this.favouritesservice.addtofav(restaurant)
+ }
   ngOnInit() {
     this.nav.show()
   initFlowbite
     this.restaurants.sort(this.sortByName)
   }
-  constructor(public nav: NavbarService) {
+  constructor(public nav: NavbarService, private localstorage: LocalstorageService, private router : Router , private favouritesservice: FavouritesService) {
     
   }
   sortByName(a:any, b:any ):any {
