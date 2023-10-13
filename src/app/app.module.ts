@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
 import { NavbarService } from './Services/navbar.service';
 import { InitialsPipe } from './Pipes/initials.pipe';
 import { LoaderComponent } from './loader/loader.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { LoaderComponent } from './loader/loader.component';
     LoginComponent,
     InitialsPipe,
     LoaderComponent,
+    DashboardComponent,
 
     
   ],

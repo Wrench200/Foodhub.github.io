@@ -60,13 +60,11 @@
                                                 class=" text-sm text-red-600 dark:text-red-500">
                                                 <span class="font-medium"></span> username can not contain numbers
                                             </p>
-                                            <p *ngIf="signupForm.controls['username'].valid" class="text-green-800 font-semibold">
-                                                All good
-                                            </p>
+                                           
                                         </div>
                                     </div>
                                     <div class="relative z-0 w-full mb-3 group">
-                                        <input type="email" name="email" id="email"
+                                        <input [ngClass]="saveError ? 'border-red-600' : ''" type="email" name="email" id="email"
                                             class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                             placeholder=" " formControlName="email" required />
                                         <label for="email"
@@ -84,8 +82,9 @@
                                                     class="font-medium"></span>
                                                 Email is required
                                             </p>
-                                            <p *ngIf="signupForm.controls['email'].valid" class="text-green-800 font-semibold">
-                                                All good
+                                           
+                                            <p *ngIf="saveError" class="text-red-600 font-semibold">
+                                                Email already exists
                                             </p>
                                         </div>
                                     </div>
@@ -118,9 +117,7 @@
                                                
 
                                             </p>
-                                            <p *ngIf="signupForm.controls['password'].valid"  class="text-green-800 font-semibold">
-                                                All good
-                                            </p>
+                                           
                                         </div>
 
                                     </div>

@@ -6,5 +6,5 @@ export interface user {
     email: string;
     password: string;
     created_at: string;
-    favorite?:Restaurant[]
+    favorite:Restaurant[] 
 }

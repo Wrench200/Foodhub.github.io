@@ -6,11 +6,15 @@ import { PNF404Component } from './components/pnf404/pnf404.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
     path: '', redirectTo: 'home', pathMatch: 'full'
 
+  },
+  {
+    path: 'dashboard', component: DashboardComponent, title: 'Dashboard'
   },
   {
     path: 'home', component: HomeComponent, title: 'FoodHub Home',
@@ -22,7 +26,7 @@ const routes: Routes = [
     path: 'register', component: RegisterComponent, title: 'Register'
   },
   {
-path: 'login', component: LoginComponent, title: 'Login'
+  path: 'login', component: LoginComponent, title: 'Login'
   },
   {
     path: 'breadcrumbs', component: BreadcrumbsComponent, title: 'bread'

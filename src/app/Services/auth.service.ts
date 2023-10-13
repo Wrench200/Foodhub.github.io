@@ -64,6 +64,7 @@ export class AuthService {
     let users: Array<user> = this.localstorage.getitem('users') ?? [];
     user['password'] = this.passencrypt(user.password)
     user['id'] = Date.now(); 
+    user['favorite']=[]
     user['created_at'] = this.getCurrentDate();
     delete user.confirm_password;
     users.push(user);
