@@ -1,5 +1,5 @@
 
-<div class=" scroll-smooth bg-gradient-to-b from-stone-700 to-95% to-gray-50 flex flex-col justify-center  items-center">
+<div class=" scroll-smooth bg-gradient-to-b from-slate-900 flex flex-col justify-center  items-center">
 
     <h1 data-te-ripple-init data-te-ripple-color="light" class="text-4xl pt-20 font-semibold text-white bg-no-repeat bg-cover text-center w-full none mb-8">All Restaurants
 
@@ -8,9 +8,9 @@
     </h1>
     <div class="container  flex flex-wrap justify-center items-center ">
         <div *ngFor="let rest of restaurants"
-            class="w-[19rem] m-4   odd:text-rose-500 even:text-amber-600 h-[19rem]  max-w-sm bg-neutral-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <a>
-                <img  class="p-4 h-[13rem] w-[19rem]  rounded-xl" src="{{ rest.profile }}" alt=" image" />
+            class="w-[19rem] m-4 hover:scale-110 transition-all duration-400  odd:text-rose-500 even:text-amber-600 h-[19rem] max-w-sm bg-neutral-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a routerLink="/indi" class="rounded-sm ">
+                <img class="p-4 rounded-md cursor-pointer h-[14rem] w-[19rem]  " src="{{ rest.profile }}" alt=" image" />
             </a>
             <div class="flex justify-between w-full">
                 <div class="px-3 w-4/5">
@@ -42,6 +42,6 @@
 
 <div class="popup" *ngIf="showPopup">
     <div class="popup-content">
-        Bless is late
+       Please log in to continue
     </div>
 </div>

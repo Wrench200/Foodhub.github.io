@@ -7,6 +7,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { IndividualrestaurantComponent } from './components/individualrestaurant/individualrestaurant.component';
+
 
 const routes: Routes = [
   {
@@ -15,6 +17,10 @@ const routes: Routes = [
   },
   {
     path: 'dashboard', component: DashboardComponent, title: 'Dashboard'
+  },
+  {
+    path: 'indi', component: IndividualrestaurantComponent, title: ''
+
   },
   {
     path: 'home', component: HomeComponent, title: 'FoodHub Home',

@@ -17,7 +17,9 @@ import { NavbarService } from './Services/navbar.service';
 import { InitialsPipe } from './Pipes/initials.pipe';
 import { LoaderComponent } from './loader/loader.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { IndividualrestaurantComponent } from './components/individualrestaurant/individualrestaurant.component';
 
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     InitialsPipe,
     LoaderComponent,
     DashboardComponent,
+    IndividualrestaurantComponent
+   
+   
 
     
   ],

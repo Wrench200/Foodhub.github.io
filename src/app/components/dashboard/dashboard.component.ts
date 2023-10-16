@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalstorageService } from 'src/app/Services/localstorage.service';
 import { NavbarService } from 'src/app/Services/navbar.service';
 
 @Component({
@@ -6,9 +7,13 @@ import { NavbarService } from 'src/app/Services/navbar.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
-  ngOnInit() {
-    this.nav.show()
+export class DashboardComponent implements OnInit{
+
+  constructor(private localstorage: LocalstorageService, public nav: NavbarService) {
+    
   }
-  constructor(public nav: NavbarService) { }
+  ngOnInit() {
+   this.nav.show()
+  }
+  loggedin: any = this.localstorage.getitem('auth')
 }
