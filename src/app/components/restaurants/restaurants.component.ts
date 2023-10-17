@@ -19,7 +19,13 @@ export class RestaurantsComponent implements OnInit {
   
   addtofav(restaurant: any) {
    this.favouritesservice.addtofav(restaurant)
- }
+  }
+  openres(val: Restaurant) {
+    const data = JSON.stringify(val)
+    this.router.navigate(['/indi'], {
+      queryParams:{ data: data}
+    })
+  }
   ngOnInit() {
     this.nav.show()
   initFlowbite

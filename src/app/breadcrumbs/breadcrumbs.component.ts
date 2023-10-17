@@ -23,5 +23,5 @@ export class BreadcrumbsComponent implements OnInit {
       })
      },5000)
   }
-constructor(private router: Router, private route: ActivatedRoute, public nav : NavbarService){}
+  constructor(private router: Router, private route: ActivatedRoute, public nav : NavbarService){}
 }

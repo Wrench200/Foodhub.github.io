@@ -1,26 +1,45 @@
-<div class="container">
-    <div class="flex justify-between">
-        <div class=" w-[30rem] h-[20rem] ">
-            <img src="assets/homebg-sm.jpg" alt="profile pic" width="100%" height="100%">
-        </div>
-        <div class="flex flex-col">
-            <span class="">Be Bop</span>
-            <span class="">Bonanjo Douala</span>
-            <span class="">675510703</span>
-            <span class="">6500FCFA</span>
-        </div>
-
+<div class="md:flex container h-full font-medium mt-16">
+    <div class="w-full border-2 border-gray-500 ">
+      
+        <img width="100%" src="{{data.profile}}" alt="profile">
     </div>
-    <div class="flex justify-between">
-        <div
-        class="bg-gray-600 w1/2">slider</div>
-        <div class="flex flex-col">
-            <span>14-20</span>
-            <span>
-                monday to Friday
-            </span>
+    <div class="p-4 flex flex-col justify-between">
+<h1 class="font-bold text-2xl text-amber-500">{{ data.name }}</h1>
+    
+    <span>{{data.location}}</span>
+    <div class="flex w-full  ">
+        <span *ngFor="let re of data.region"> -{{re}}</span>
+    </div>
+    <div class="flex flex-col">
+        <span>Average Price: {{ data.price }}</span>
+        <span>Contact: {{ data.contact}} </span>
+        <span>Open :{{ data.time }}</span>
+    </div>
+    <div class="flex  flex-wrap">
+        <span class="w-full text-rose-500">Days Open</span>
+        <span class="" *ngFor="let day of data.days">-{{day}}</span>
+    </div>
+    <div class="flex w-full justify-center items-center ">
+        <span class="w-full text-rose-500">Menu</span>
+        <div class="w-[10rem] m-2 " *ngFor="let men of data.menu">
+
+            <img  width="100%" src="{{men}}" alt="menu">
         </div>
     </div>
-
-
+    </div>
 </div>
+
+
+
+<!-- name: string,
+type: string,
+region: string[],
+profile: string,
+price: string,
+contact: string,
+facebook?: string,
+email?: string,
+location: string,
+menu: string[],
+time: string,
+days: string[], -->

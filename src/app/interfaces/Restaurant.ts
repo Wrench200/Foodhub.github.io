@@ -10,7 +10,7 @@ export interface Restaurant {
     location: string,
     menu: string[],
     time: string,
-    days: 
-        string[]
-    ,
+    days: string[],
 }
+
+
