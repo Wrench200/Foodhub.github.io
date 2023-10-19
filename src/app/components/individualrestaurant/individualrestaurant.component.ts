@@ -1,3 +1,4 @@
+import { initFlowbite } from 'flowbite';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavbarService } from 'src/app/Services/navbar.service';
@@ -16,8 +17,8 @@ export class IndividualrestaurantComponent implements OnInit {
     profile:'',
     price:'',
     contact:'',
-    facebook:'',
-    email:'',
+    
+    
     location:'',
     menu:[],
     time:'',
@@ -35,7 +36,8 @@ export class IndividualrestaurantComponent implements OnInit {
       
     })
   }
-  ngOnInit(){
+  ngOnInit() {
+    initFlowbite()
     this.nav.show()
   }
   

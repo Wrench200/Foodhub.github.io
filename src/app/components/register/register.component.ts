@@ -54,7 +54,7 @@ console.log('submited');
 
 
       localStorage.setItem('auth', JSON.stringify(save.data))
-      this.redirectTo('home')
+      this.redirectTo('home', 2000)
      
       
     } else {
@@ -64,7 +64,7 @@ console.log('submited');
     }
   }
 
-  redirectTo(uri: string) {
-    this.router.navigate(['breadcrumbs'],{ queryParams: { uri: uri } })
+  redirectTo(uri: string, time: number) {
+    this.router.navigate(['breadcrumbs'],{ queryParams: { uri: uri,time } })
   }
 }

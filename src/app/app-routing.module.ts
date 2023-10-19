@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { IndividualrestaurantComponent } from './components/individualrestaurant/individualrestaurant.component';
+import { FavouritesComponent } from './components/favourites/favourites.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,9 @@ const routes: Routes = [
   },
   {
     path: 'register', component: RegisterComponent, title: 'Register'
+  },
+  {
+    path: 'favourites', component: FavouritesComponent, title: 'Favorites'
   },
   {
   path: 'login', component: LoginComponent, title: 'Login'

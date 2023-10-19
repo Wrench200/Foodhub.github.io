@@ -61,7 +61,7 @@ export class FavouritesService {
         if (current_user.email == this.loggedin.email) {
           if (current_user.favorite.length < 1) {
             current_user.favorite.push(val)
-            console.log('empty');
+            
 
             this.localstorage.removeitem('users')
             this.localstorage.saveitem('users', users)

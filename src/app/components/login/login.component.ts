@@ -69,10 +69,10 @@ export class LoginComponent implements OnInit {
     } else {
       console.log(login.data);
       localStorage.setItem('auth', JSON.stringify(login.data))
-      this.redirectTo('home')
+      this.redirectTo('home', 2000)
     }
   }
-  redirectTo(uri: string) {
-    this.router.navigate(['breadcrumbs'], { queryParams: { uri: uri } })
+  redirectTo(uri: string, time: number) {
+    this.router.navigate(['breadcrumbs'], { queryParams: { uri: uri, time } })
   }
 }

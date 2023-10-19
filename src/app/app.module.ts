@@ -18,6 +18,8 @@ import { InitialsPipe } from './Pipes/initials.pipe';
 import { LoaderComponent } from './loader/loader.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { IndividualrestaurantComponent } from './components/individualrestaurant/individualrestaurant.component';
+import { FavouritesComponent } from './components/favourites/favourites.component';
+import { TittlePipe } from './Pipes/tittle.pipe';
 
  
 @NgModule({
@@ -34,7 +36,9 @@ import { IndividualrestaurantComponent } from './components/individualrestaurant
     InitialsPipe,
     LoaderComponent,
     DashboardComponent,
-    IndividualrestaurantComponent
+    IndividualrestaurantComponent,
+    FavouritesComponent,
+    TittlePipe
    
    
 

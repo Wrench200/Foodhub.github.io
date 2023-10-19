@@ -1,0 +1,49 @@
+<div class=" scroll-smooth h-screen bg-gradient-to-b from-slate-900 flex flex-col items-center">
+
+    <h1 
+        class="text-4xl pt-20 font-semibold text-white bg-no-repeat bg-cover text-center w-full none mb-8">Favourite Restaurants
+
+
+
+    </h1>
+    <div class="h-[50vh] flex flex-col justify-center items-center" *ngIf="restaurants!.length === 0">
+        <p class="md:text-3xl text-2xl text-center  text-gray-900">No Favourite Restaurants</p>
+        <button routerLink="/restaurants"
+            class="inline-block rounded-full mt-8 bg-rose-500 px-6 py-4 hover:scale-105 text-xs font-medium uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-rose-600  focus:bg-rose-600 focus:outline-none focus:ring-0 active:bg-rose-600 active:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(20,164,77,0.5)]  dark:focus:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.2),0_4px_18px_0_rgba(20,164,77,0.1)]">
+            Add Restaurants
+        </button>
+    </div>
+    <div class="container  flex flex-wrap justify-center items-center ">
+        <div *ngFor="let rest of restaurants"
+            class="w-[19rem] m-4 hover:scale-110 transition-all duration-400  odd:text-rose-500 even:text-amber-600 h-[19rem] max-w-sm bg-neutral-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <a (click)="openres(rest)" class="rounded-sm ">
+                <img class="p-4 rounded-md cursor-pointer h-[14rem] w-[19rem]  " src="{{ rest.profile }}"
+                    alt=" image" />
+            </a>
+            <div class="flex justify-between w-full">
+                <div class="px-3 w-4/5">
+                    <a>
+                        <h4 class="text-xl font-semibold tracking-tight  dark:text-white">{{rest.name}}
+                        </h4>
+                        <h5 class="font-normal text-gray-700">
+                            {{rest.location}}
+                        </h5>
+                        <h6 class="font-semibold text-black">
+                            {{rest.price}}
+                        </h6>
+                    </a>
+                </div>
+                <div class="flex items-center px-3 justify-center">
+
+                    <a (click)="remove(rest)" class="cursor-pointer "><svg
+                            class="w-6 h-6 text-red-600 dark:text-white" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 19">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M11 4C5.5-1.5-1.5 5.5 4 11l7 7 7-7c5.458-5.458-1.542-12.458-7-7Z" />
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

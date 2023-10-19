@@ -5,8 +5,8 @@
         flex flex-col pt-16 justify-center mb-[20rem] md:justify-between bg-gradient-to-b from-slate-900 items-center md:flex-row">
             <div class=" md:w-[50%] w-full flex flex-col justify-between items-center md:items-end p-4  h-[100%]">
                 <p
-                    class="bg-amber-6 bg-amber-600 border-8 border-gray-300 h-[10rem] md:h-[20rem] w-[10rem] md:w-[20rem] rounded-full   text-center text-[6rem] md:text-[14rem] text-white">
-                    {{ loggedin.username | initials | uppercase }}</p>
+                    class="bg-amber-6 bg-amber-600 border-8 border-gray-300 h-[10rem] md:h-[20rem] w-[10rem] md:w-[20rem] rounded-full   text-center text-[6rem] md:text-[12rem] text-white">
+                    {{ loggedin.username | initials:1 | uppercase }}</p>
                 <div class="text-left h-22%">
                     <p class=" text-lg text-rose-600 italic font-bold">Username</p>
                     <span class="text-xl font-medium">{{loggedin.username}}</span>

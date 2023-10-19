@@ -9,11 +9,12 @@ import { NavbarService } from '../Services/navbar.service';
 })
 export class BreadcrumbsComponent implements OnInit {
   url!: string;
+  time!: number;
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
       this.nav.hide()
       this.url = params['uri']
-      
+      this.time = params['time']
 
     })
 
@@ -21,7 +22,7 @@ export class BreadcrumbsComponent implements OnInit {
       this.router.navigate([this.url]).then(() => {
         window.location.reload()
       })
-     },5000)
+     }, this.time)
   }
   constructor(private router: Router, private route: ActivatedRoute, public nav : NavbarService){}
 }

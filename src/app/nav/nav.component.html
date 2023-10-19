@@ -24,9 +24,9 @@
                 id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
                 data-dropdown-placement="bottom">
                 <span class="sr-only">Open user menu</span>
-               <p class="h-8 rounded-full font-semibold text-white w-8" >{{ loggedin.username | initials | uppercase }}</p>
+               <p class="h-8 rounded-full font-semibold text-white w-8" >{{ loggedin.username | initials:1 | uppercase }}</p>
             </button>
-            <a (click)="redirectTo('login')" *ngIf=" !checkforlogin()" type="button"
+            <a (click)="redirectTo('login', 1000)" *ngIf=" !checkforlogin()" type="button"
                 class=" font-semibold cursor-pointer text-white text-xl hover:text-rose-600 hover:underline mr-3">
                 LogIn
         </a>
@@ -43,8 +43,8 @@
                             class="block px-4 py-2 text-sm text-gray-700 hover:bg-rose-600 hover:text-white cursor-pointer dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
                     </li>
                     <li>
-                        <a 
-                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-rose-600 hover:text-white cursor-pointer dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
+                        <a routerLink="/favourites"  routerLinkActive="activelink"
+                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-rose-600 hover:text-white cursor-pointer dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Favourites</a>
                     </li>
                     
                     <li>
@@ -55,7 +55,7 @@
                 </ul>
             </div>
             <button data-collapse-toggle="navbar-user" type="button"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-black rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-100 hover:text-black focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                 aria-controls="navbar-user" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
                 <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
