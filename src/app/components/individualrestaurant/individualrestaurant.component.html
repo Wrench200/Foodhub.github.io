@@ -1,12 +1,12 @@
-<section class="container md:flex mx-auto mt-16 md:mx-10 ">
+<section class="w-full bg-gradient-to-b md:w-screen from-neutral-400 md:flex  pt-16 md:px-10 ">
    
-    <div class="bg-white   rounded ">
+    <div class=" w-full   rounded ">
         <div class="flex justify-center  items-center">
             <img src="{{data.profile}}"
-                alt="The Matanda Mangroves" class=" rounded-lg h-64 p-1 w-full md object-cover">
+                alt="profile pic" class=" rounded-lg h-64  w-full  object-cover">
                
         </div>
-        <div class="flex px-2 md:justify-evenly justify-between flex-col  ">
+        <div class="flex px-2 md:justify-evenly md:w-full md:grid grid-cols-3  justify-between flex-col  ">
             <div class="flex my-2">
                 <h1 class="text-3xl font-bold text-rose-500">{{data.name}}</h1>
             
@@ -14,13 +14,15 @@
             <p class="text-sm flex font-medium text-gray-600"><span class="flex items-center " *ngFor="let ty of data.region"><svg class="h-2 w-2 " viewBox="0 0 16 16" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 16 16">
                 <circle cx="8" cy="8" r="8" fill="#f43f5e" class="fill-000000"></circle>
             </svg><span class="mx-2">{{ty}}</span></span></p>
-            <p class="text-gray-800 mt-4 flex font-semibold"><svg fill="none" class="h-6 w-6 mr-2" stroke-width="1.5" viewBox="0 0 24 24"
+            <p class="text-gray-800 flex items-center font-semibold mt-2"><span class=" text-rose-500 my-2 mr-1 ">Average Price</span> 5000FCFA</p>
+            <p class="text-gray-800 mt-2 flex font-semibold"><svg fill="none" class="h-6 w-6 mr-2" stroke-width="1.5" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M18.118 14.702 14 15.5c-2.782-1.396-4.5-3-5.5-5.5l.77-4.13L7.815 2H4.064c-1.128 0-2.016.932-1.847 2.047.42 2.783 1.66 7.83 5.283 11.453 3.805 3.805 9.286 5.456 12.302 6.113 1.165.253 2.198-.655 2.198-1.848v-3.584l-3.882-1.479Z"
                         stroke="#f43f5e" stroke-linecap="round" stroke-linejoin="round" class="stroke-000000"></path>
                 </svg> 6 98 21 12 0</p>
-            <p class="text-gray-600 mt-4 flex font-semibold"><svg viewBox="0 0 32 32" class="h-6 w-6 mr-2" xml:space="preserve"
+              
+            <p class="text-gray-600 mt-2 flex font-semibold"><svg viewBox="0 0 32 32" class="h-6 w-6 mr-2" xml:space="preserve"
                     xmlns="http://www.w3.org/2000/svg">
                     <g fill="none" stroke="#f43f5e" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"
                         class="stroke-000000">
@@ -28,9 +30,27 @@
                         <circle cx="16" cy="12" r="4"></circle>
                     </g>
                 </svg>{{data.location}}</p>
-            <p class="text-gray-800 font-semibold">Price: 5000FCFA</p>
+          
            
-       
+    <div id="accordion-flush" data-accordion="open" data-active-classes="bg-neutral-300">
+        <h2 id="accordion-collapse-heading-2 ">
+            <button type="button"
+                class="flex items-center font-medium mt-2 text-left bg-neutral-300 text-black  "
+                data-accordion-target="#accordion-collapse-body-1" aria-expanded="true"
+                aria-controls="accordion-collapse-body-1">
+                <span>{{data.time}}</span>
+                <svg data-accordion-icon class="w-3 h-3 transition-all duration-500 rotate-180 ml-1 shrink-0" aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 5 5 1 1 5" />
+                </svg>
+            </button>
+        </h2>
+        <div id="accordion-collapse-body-1" class="hidden transition-transform duration-700" aria-labelledby="accordion-collapse-heading-2">
+            <div class="p-4 ">
+                <p class="font-medium" *ngFor="let day of data.days" >{{day}}</p>
+            </div>
+        </div>
         
            
        
@@ -39,17 +59,14 @@
            
         </div>
     </div>
-    <div class="p-4">
+    <div class="p-2  md:w-full">
         <h2 class="text-lg font-semibold text-rose-500 mb-2">Menu</h2>
-        <div class="md:grid-cols-3 md:w-1/2 grid grid-cols-4 gap-4">
-            <img src="https://kathalog.net/admin/images/d1fbd019d9c87b478f5fe4cf10b0deff.jpeg" alt="Menu item"
-                class="h-32 w-full object-cover">
-            <img src="https://kathalog.net/admin/images/71fd5b9ccea653126671b2ee509e7802.jpeg" alt="Menu item"
-                class="h-32 w-full object-cover">
-            <img src="https://kathalog.net/admin/images/71fd5b9ccea653126671b2ee509e7802.jpeg" alt="Menu item"
-                class="h-32 w-full object-cover">
-            <img src="https://kathalog.net/admin/images/71fd5b9ccea653126671b2ee509e7802.jpeg" alt="Menu item"
-                class="h-full w-full object-cover">
+        <div class="  md:flex md:justify-center flex-wrap
+         grid grid-cols-4 gap-4">
+            <img *ngFor="let men of data.menu" src="{{men}}" alt="Menu item"
+                class="h-full w-[12rem] object-cover">
+         
         </div>
+    </div>
     </div>
 </section>
