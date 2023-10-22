@@ -33,13 +33,11 @@
                     </g>
                 </svg>{{data.location}}</p>
 
-            <a href="{{data.facebook}}" *ngIf="data.facebook" class="text-gray-800 mt-2 h-10 flex w-full font-semibold"><svg
-                    viewBox="0 0 56.693 56.693" xml:space="preserve" class="h-6 w-6 mr-2"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M40.43 21.739h-7.645v-5.014c0-1.883 1.248-2.322 2.127-2.322h5.395V6.125l-7.43-.029c-8.248 0-10.125 6.174-10.125 10.125v5.518h-4.77v8.53h4.77v24.137h10.033V30.269h6.77l.875-8.53z"
-                        fill="#f43f5e" class="fill-000000"></path>
-                </svg>{{data.facebook | tittle:20}}</a>
+            <a href="{{data.facebook}}" *ngIf="data.facebook" class="text-gray-800 mt-2 h-10 flex w-full font-semibold"><svg class="h-6 w-6 mr-2" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512">
+                <path
+                    d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64h-64zm42.2 48H272v192h-51V240h-45v-32h45v-58.7c0-24.5 5.4-41.2 15.5-51.8 11.2-12 31.1-17.5 59.6-17.5H336v32h-17.5c-12 0-27.5 1.1-37.1 11.7-8.1 9-9.4 20.1-9.4 30.1V208h62l-3.8 32z"
+                    fill="#f43f5e" class="fill-000000"></path>
+            </svg>{{data.facebook | tittle:20}}</a>
             <a href="mailto: {{data.email}}" *ngIf="data.email" class="text-gray-800 mt-2 flex font-semibold"><svg
                     viewBox="0 0 512 512" class="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -52,6 +50,13 @@
                         class="flex items-center font-medium my-2 text-left bg-transparent text-gray-800  "
                         data-accordion-target="#accordion-collapse-body-1" aria-expanded="true"
                         aria-controls="accordion-collapse-body-1">
+                        <svg class="h-6 w-6 mr-2" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <g data-name="Layer 15">
+                                <path d="M16 31a15 15 0 1 1 15-15 15 15 0 0 1-15 15Zm0-28a13 13 0 1 0 13 13A13 13 0 0 0 16 3Z" fill="#f43f5e"
+                                    class="fill-101820"></path>
+                                <path d="m20.24 21.66-4.95-4.95A1 1 0 0 1 15 16V8h2v7.59l4.66 4.65Z" fill="#f43f5e" class="fill-101820"></path>
+                            </g>
+                        </svg>
                         <span>{{data.time}}</span>
                         <svg data-accordion-icon class="w-3 h-3 transition-all duration-500 rotate-180 ml-1 shrink-0"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
@@ -79,8 +84,46 @@
         <h2 class="text-lg font-semibold text-rose-500 mb-2">Menu</h2>
         <div class="  
      grid grid-cols-4 gap-4">
-            <img *ngFor="let men of data.menu" src="{{men}}" alt="Menu item" class="h-full w-[12rem] object-cover">
+            <img id="img1" *ngFor="let men of data.menu" src="{{men}}" alt="Menu item" class="h-full w-[12rem] object-cover">
 
         </div>
     </div>
 </section>
+<button type="button" data-modal-target="crypto-modal" data-modal-toggle="crypto-modal"
+    class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700">
+    <svg aria-hidden="true" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1">
+        </path>
+    </svg>
+    Connect wallet
+</button>
+
+<!-- Main modal -->
+<div id="crypto-modal" tabindex="-1" aria-hidden="true"
+    class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative w-full max-w-md max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <button type="button"
+                class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                data-modal-hide="crypto-modal">
+                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                </svg>
+                <span class="sr-only">Close modal</span>
+            </button>
+            <!-- Modal header -->
+            <div class="px-6 py-4 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-base font-semibold text-gray-900 lg:text-xl dark:text-white">
+                    Connect wallet
+                </h3>
+            </div>
+            <!-- Modal body -->
+            
+        </div>
+    </div>
+</div>
