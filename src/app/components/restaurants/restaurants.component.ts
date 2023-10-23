@@ -2,6 +2,7 @@ import { FavouritesService } from './../../Services/favourites.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { initFlowbite } from 'flowbite';
+import { TittlePipe } from 'src/app/Pipes/tittle.pipe';
 import { LocalstorageService } from 'src/app/Services/localstorage.service';
 import { NavbarService } from 'src/app/Services/navbar.service';
 import { Restaurant } from 'src/app/interfaces/Restaurant';
@@ -32,7 +33,8 @@ export class RestaurantsComponent implements OnInit {
   initFlowbite
     this.restaurants.sort(this.sortByName)
   }
-  constructor(public nav: NavbarService, private localstorage: LocalstorageService, private router : Router , private favouritesservice: FavouritesService) {
+  constructor(public nav: NavbarService, private localstorage: LocalstorageService, private router: Router, private favouritesservice: FavouritesService,
+  ) {
     
   }
   sortByName(a:any, b:any ):any {
@@ -71,7 +73,7 @@ export class RestaurantsComponent implements OnInit {
 
   restaurants: Restaurant[] = [
   {
-    name: "The Matanda Mangroves",
+      name: "Palétuviers Matanda",
     type: "local",
     region: ["African", "European", "Cameroonian"],
     profile: "https://kathalog.net/admin/images/dc581b12ce39fd60d5eb9517e890ce7b.jpeg",
@@ -79,7 +81,7 @@ export class RestaurantsComponent implements OnInit {
     contact: "6 98 21 12 0",
     facebook: "https://www.facebook.com/lespaletuviersmatanda/",
     email: "paletuviersmatanda@gmail.com",
-    location: "Bonassama, Bonaberi, Douala",
+    location: "Bonassama, Bonaberi",
     menu: [
       "https://kathalog.net/admin/images/d1fbd019d9c87b478f5fe4cf10b0deff.jpeg",
       "https://kathalog.net/admin/images/71fd5b9ccea653126671b2ee509e7802.jpeg",
@@ -98,7 +100,7 @@ export class RestaurantsComponent implements OnInit {
     ],
   },
   {
-    name: "The Blue Whale of Massa ",
+    name: "La Baleine Blue de Massa",
     region: ["African", "European", "French", "Cocktails"],
     type: "local",
     profile: "https://kathalog.net/admin/images/1501195374IMG_6357.JPG",
