@@ -24,7 +24,7 @@
                 id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
                 data-dropdown-placement="bottom">
                 <span class="sr-only">Open user menu</span>
-               <p class="h-8 rounded-full font-semibold text-white w-8" >{{ loggedin.username | initials:1 | uppercase }}</p>
+               <p class="h-8 rounded-full text-center font-semibold text-white w-8 flex justify-center items-center" >{{ loggedin.username | initials:1 | uppercase }}</p>
             </button>
             <a (click)="redirectTo('login', 1000)" *ngIf=" !checkforlogin()" type="button"
                 class=" font-semibold cursor-pointer text-white text-xl hover:text-rose-600 hover:underline mr-3">
