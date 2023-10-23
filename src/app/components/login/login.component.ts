@@ -41,8 +41,8 @@ export class LoginComponent implements OnInit {
     this.nav.hide()
     this.loginForm = this.formBuilder.group({
       email: ['', [
-        Validators.required,
-        Validators.email
+        Validators.required
+        
       ]],
 
       password: ['', [
@@ -59,6 +59,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+
 
     const form = this.loginForm.value;
     const login = this.authService.login(form.email, form.password)

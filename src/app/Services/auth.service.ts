@@ -91,27 +91,37 @@ export class AuthService {
 
 
         if (user.email == email && this.passdecrypt(user.password) == password) {
-
-          login_user = user;
+         
+          this.localstorage.saveitem('auth', user);
+          return {
+            error: false,
+            message: 'User login successfully !!!',
+            data: user
+          }
           break
         }
+        
+        
+        else if (user.email == email && this.passdecrypt(user.password) !== password){
+          return {
+            error: true,
+            message: 'Invalid credentials',
+            
+          }
+          break
+        }
+        
       }
+    
+      
     }
-
-    if (login_user) {
-
-      this.localstorage.saveitem('auth', login_user);
-      return {
-        error: false,
-        message: 'User login successfully !!!',
-        data: login_user
-      }
-    }
-
     return {
       error: true,
-      message: 'Invalid credentials'
+      message: 'User does not exist',
+      data: login_user
     }
+
+    
   }
 
   auth() {

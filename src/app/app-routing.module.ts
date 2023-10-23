@@ -9,6 +9,8 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { IndividualrestaurantComponent } from './components/individualrestaurant/individualrestaurant.component';
 import { FavouritesComponent } from './components/favourites/favourites.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
 
 
 const routes: Routes = [
@@ -22,6 +24,12 @@ const routes: Routes = [
   {
     path: 'indi', component: IndividualrestaurantComponent, title: ''
 
+  },
+  {
+path: 'about', component: AboutUsComponent, title: 'about us'
+  },
+  {
+path: 'contact', component: ContactusComponent
   },
   {
     path: 'home', component: HomeComponent, title: 'FoodHub Home',
@@ -48,7 +56,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{scrollPositionRestoration: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

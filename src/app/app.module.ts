@@ -20,6 +20,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { IndividualrestaurantComponent } from './components/individualrestaurant/individualrestaurant.component';
 import { FavouritesComponent } from './components/favourites/favourites.component';
 import { TittlePipe } from './Pipes/tittle.pipe';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
 
  
 @NgModule({
@@ -38,7 +40,9 @@ import { TittlePipe } from './Pipes/tittle.pipe';
     DashboardComponent,
     IndividualrestaurantComponent,
     FavouritesComponent,
-    TittlePipe
+    TittlePipe,
+    AboutUsComponent,
+    ContactusComponent
    
    
 
@@ -49,7 +53,7 @@ import { TittlePipe } from './Pipes/tittle.pipe';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule,
+    RouterModule
    
     
   ],

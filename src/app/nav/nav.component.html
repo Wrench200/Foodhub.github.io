@@ -28,7 +28,7 @@
             </button>
             <a (click)="redirectTo('login', 1000)" *ngIf=" !checkforlogin()" type="button"
                 class=" font-semibold cursor-pointer text-white text-xl hover:text-rose-600 hover:underline mr-3">
-                LogIn
+                Login
         </a>
             <!-- Dropdown menu -->
             <div *ngIf=" checkforlogin()" class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
@@ -69,12 +69,12 @@
             <ul
                 class="flex flex-col font-medium p-4 justify-center md:p-0  border border-gray-100 rounded-xl  md:flex-row md:space-x-8 md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
-                    <a routerLink="/home" routerLinkActive="activelink" 
+                    <a  routerLink="/home" routerLinkActive="activelink" 
                         class="navlinks" 
                        >Home</a>
                 </li>
                 <li>
-                    <a routerLink="/restaurants" routerLinkActive="activelink" 
+                    <a  routerLink="/restaurants" routerLinkActive="activelink" 
                         class="navlinks">Restaurants</a>
                 </li>
                 <li>
@@ -86,7 +86,7 @@
                         class="navlinks">Pricing</a>
                 </li>
                 <li>
-                    <a routerLink="3" routerLinkActive="activelink"
+                    <a routerLink="contact" routerLinkActive="activelink"
                         class="navlinks">Contact</a>
                 </li>
             </ul>
