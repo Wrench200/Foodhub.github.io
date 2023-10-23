@@ -5,6 +5,7 @@ import { initFlowbite } from 'flowbite';
 import { LocalstorageService } from 'src/app/Services/localstorage.service';
 import { NavbarService } from 'src/app/Services/navbar.service';
 import { Restaurant } from 'src/app/interfaces/Restaurant';
+import { user } from 'src/app/interfaces/user';
 
 
 @Component({
@@ -46,6 +47,27 @@ export class RestaurantsComponent implements OnInit {
       return 1;
     }
   }
+  loggedin: user = this.localstorage.getitem('auth');
+  checkres(val: Restaurant) {
+
+    const users: Array<user> = this.localstorage.getitem('users');
+    let bo: boolean = false
+    for (let i = 0; i < users.length; i++) {
+      let current_user = users[i];
+      if (current_user.email == this.loggedin.email) {
+        const check = current_user.favorite.includes(val)
+        if (check) {
+          console.log('good');
+          bo = true
+        }
+        console.log('trash');
+        bo = false
+      }
+
+    }
+    return bo
+  }
+
 
   restaurants: Restaurant[] = [
   {

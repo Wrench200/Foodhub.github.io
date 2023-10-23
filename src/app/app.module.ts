@@ -22,6 +22,7 @@ import { FavouritesComponent } from './components/favourites/favourites.componen
 import { TittlePipe } from './Pipes/tittle.pipe';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
+import { OrderComponent } from './components/order/order.component';
 
  
 @NgModule({
@@ -42,7 +43,8 @@ import { ContactusComponent } from './components/contactus/contactus.component';
     FavouritesComponent,
     TittlePipe,
     AboutUsComponent,
-    ContactusComponent
+    ContactusComponent,
+    OrderComponent
    
    
 
