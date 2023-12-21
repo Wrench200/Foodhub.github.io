@@ -15,15 +15,14 @@
     </div>
     <div class="container  flex flex-wrap justify-center items-center ">
         <div *ngFor="let rest of restaurants"
-            class="w-[19rem] m-4 hover:scale-110 transition-all duration-400  odd:text-rose-500 even:text-amber-600 h-[19rem] max-w-sm bg-neutral-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            class="md:w-[19rem] p-2 w-full flex cursor-pointer md:block m-2 md:m-4 hover:scale-105 md:hover:scale-110 hover:bg-slate-200 transition-all duration-400  odd:text-rose-500 even:text-amber-600 h-full md:h-[20rem] max-w-sm bg-neutral-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a (click)="openres(rest)" class="rounded-sm ">
-                <img class="p-4 rounded-md cursor-pointer h-[14rem] w-[19rem]  " src="{{ rest.profile }}"
-                    alt=" image" />
+                <img class="p-2 rounded-md cursor-pointer w-[12rem] md:h-[14rem] md:w-[19rem]  " src="{{ rest.profile }}" alt=" image" />
             </a>
-            <div class="flex justify-between w-full">
-                <div class="px-3 w-4/5">
+            <div class="flex justify-between items-center w-full">
+                <div class=" px-2 w-5/5">
                     <a>
-                        <h4 class="text-xl font-semibold tracking-tight  dark:text-white">{{rest.name}}
+                        <h4 class="text-lg sm:text-xl font-semibold tracking-tight  dark:text-white">{{ rest.name }}
                         </h4>
                         <h5 class="font-normal text-gray-700">
                             {{rest.location}}
@@ -33,12 +32,19 @@
                         </h6>
                     </a>
                 </div>
-                <div class="flex items-center px-3 justify-center">
+                <div class="flex items-center px-2 h-full justify-center">
 
-                    <a (click)="remove(rest)" class="cursor-pointer "><svg class="w-6 h-6 text-rose-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 20 18">
-                        <path
-                            d="M17.947 2.053a5.209 5.209 0 0 0-3.793-1.53A6.414 6.414 0 0 0 10 2.311 6.482 6.482 0 0 0 5.824.5a5.2 5.2 0 0 0-3.8 1.521c-1.915 1.916-2.315 5.392.625 8.333l7 7a.5.5 0 0 0 .708 0l7-7a6.6 6.6 0 0 0 2.123-4.508 5.179 5.179 0 0 0-1.533-3.793Z" />
+                    <a (click)="remove(rest)" class="cursor-pointer "><svg class="h-6 w-6 hover:scale-110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M4 7H20" stroke="#f21818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path
+                                d="M6 10L7.70141 19.3578C7.87432 20.3088 8.70258 21 9.66915 21H14.3308C15.2974 21 16.1257 20.3087 16.2986 19.3578L18 10"
+                                stroke="#f21818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#f21818" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
                     </svg></a>
                 </div>
             </div>
