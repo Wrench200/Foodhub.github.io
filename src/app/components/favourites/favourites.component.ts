@@ -16,9 +16,9 @@ export class FavouritesComponent implements OnInit {
     this.nav.show()
     this.restaurants = this.getres()
     console.log(this.restaurants);
-    
+
   }
-  
+
   constructor(public nav: NavbarService, private router: Router, private localstorage: LocalstorageService, public favourites: FavouritesService) {
 
   }
@@ -31,25 +31,25 @@ export class FavouritesComponent implements OnInit {
     })
   }
   getres() {
-    
+
     const users: Array<user> = this.localstorage.getitem('users');
     for (let i = 0; i < users.length; i++) {
       let current_user = users[i];
       if (current_user.email == this.loggedin.email) {
         return current_user.favorite
       }
-     
+
     }
     return null
   }
-  
-    remove(val: Restaurant): any {
-      
-      this.favourites.addtofav(val)
+ 
+  remove(val: Restaurant): any {
+
+    this.favourites.addtofav(val)
     this.redirectTo('favourites', 500)
   }
   redirectTo(uri: string, time: number) {
     this.router.navigate(['breadcrumbs'], { queryParams: { uri: uri, time } })
   }
-  }
+}
 

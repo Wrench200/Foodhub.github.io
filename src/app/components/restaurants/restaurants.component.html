@@ -8,9 +8,9 @@
     </h1>
     <div class="container  flex flex-wrap justify-center items-center ">
         <div *ngFor="let rest of restaurants"
-            class="w-[19rem] m-4 hover:scale-110 transition-all duration-400  odd:text-rose-500 even:text-amber-600 h-[19rem] max-w-sm bg-neutral-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            class="md:w-[19rem] p-2 w-[22rem] m-2 md:m-4 hover:scale-110 transition-all duration-400  odd:text-rose-500 even:text-amber-600 h-[20rem] max-w-sm bg-neutral-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a (click)="openres(rest)" class="rounded-sm ">
-                <img class="p-4 rounded-md cursor-pointer h-[14rem] w-[19rem]  " src="{{ rest.profile }}" alt=" image" />
+                <img class="p-2 rounded-md cursor-pointer h-[14rem] w-full md:w-[19rem]  " src="{{ rest.profile }}" alt=" image" />
             </a>
             <div class="flex justify-between w-full">
                 <div class="px-3 w-4/5">
