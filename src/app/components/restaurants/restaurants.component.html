@@ -8,14 +8,14 @@
     </h1>
     <div class="container  flex flex-wrap justify-center items-center ">
         <div *ngFor="let rest of restaurants"
-            class="md:w-[19rem] p-2 w-[22rem] m-2 md:m-4 hover:scale-110 transition-all duration-400  odd:text-rose-500 even:text-amber-600 h-[20rem] max-w-sm bg-neutral-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            class="md:w-[19rem] p-2 w-full flex cursor-pointer md:block m-2 md:m-4 hover:scale-105 md:hover:scale-110 hover:bg-slate-200 transition-all duration-400  odd:text-rose-500 even:text-amber-600 h-full md:h-[20rem] max-w-sm bg-neutral-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a (click)="openres(rest)" class="rounded-sm ">
-                <img class="p-2 rounded-md cursor-pointer h-[14rem] w-full md:w-[19rem]  " src="{{ rest.profile }}" alt=" image" />
+                <img class="p-2 rounded-md cursor-pointer w-[12rem] md:h-[14rem] md:w-[19rem]  " src="{{ rest.profile }}" alt=" image" />
             </a>
             <div class="flex justify-between w-full">
-                <div class="px-3 w-4/5">
+                <div class=" px-2 w-5/5">
                     <a>
-                        <h4 class="text-xl font-semibold tracking-tight  dark:text-white">{{rest.name}}
+                        <h4 class="text-xl font-semibold tracking-tight  dark:text-white">{{ rest.name }}
                         </h4>
                         <h5 class="font-normal text-gray-700">
                             {{rest.location}}
@@ -25,7 +25,7 @@
                         </h6>
                     </a>
                 </div>
-                <div class="flex items-center px-3 justify-center">
+                <div class="flex items-center px-2 h-full justify-center">
 
                     <a (click)="addtofav(rest)" class="cursor-pointer "><svg class="w-6 h-6 text-red-600 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 21 19">
